@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件、函数、变量、判断</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	#buttontwo{
+		display: none;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 100px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	.active{
+		background: red;
+	}
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1.事件、函数</li>
+		<li><input type="button" name="" value="点击按钮" onclick="fun()" style=""class='btn'></li>
+		
+	</ul>
+</div>
+<div class="divo">
+	<ul>
+		<li>2.移入移出(显示隐藏)</li>
+		<li id="eveno">
+		    <label style="cursor:pointer;">
+		        <input name="Fruit" type="checkbox" value="" / >显示啦 
+		    </label>
+		</li>
+		<li id="buttontwo">
+		   <input type="button" name="" value="点击按钮" class='btn'>
+		</li>
+		
+	</ul>
+</div>
+<div class="divo three">
+	3.函数 鼠标经过这个div执行变窄变高变色 移出再恢复
+</div>
+<div class="divo three">
+	<ul>
+		<li>4.网页换肤</li>
+		<li><input type="button" name="" value="样式1" class='btn' onclick="styleo()"> <input type="button" name="" value="样式2" class='btn' onclick="stylet()"></li>
+	</ul>
+	
+</div>	
+</body>
+<script type="text/javascript">
+var eveno = document.getElementById('eveno')
+var buttontwo = document.getElementById('buttontwo')
+var three = document.getElementsByClassName('three')[0]
+var htmlo = document.getElementsByTagName('html')[0]
+var btn = document.getElementsByClassName('btn')
+	function fun(){
+		alert('弹出窗口')
+	}
+	//弹框
+	eveno.onmouseover = function(){
+		buttontwo.style.display = 'block'
+	}
+	eveno.onmouseout = function(){
+		buttontwo.style.display = 'none'
+	}
+	//显示隐藏事件
+	three.onmouseover = function(){
+		this.style.height = '300px';
+		this.style.background = 'red';
+		this.style.color = '#ffffff';
+	}
+	three.onmouseout = function(){
+		this.style.height = '';
+		this.style.background = '';
+		this.style.color = '';
+	}
+	//鼠标悬浮的效果
+	function styleo(){
+		htmlo.style.background = '#cc0000'
+		btn[2].style.cssText="background:red;color:#ffffff"
+		btn[3].style.cssText="background:'';color:''"
+		alert(btn[2].style.cssText)
+	}
+	function stylet(){
+		htmlo.style.background = 'yellow'
+		btn[3].style.cssText="background:red;color:#ffffff"
+		btn[2].style.cssText="background:'';color:''"
+	}
+</script>
+</html>
