@@ -3,16 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+    <style type="text/css">
+        .divo{
+            font-size: 40px;
+        }
+    </style>
 </head>
 <body>
-	<ul>
+	<ul id="oul" class="hah">
        <li style="color:blue;text-align:center;background:#cccccc;">测试看看</li>
     </ul>
     <script type="text/javascript">
-    	var oli= document.getElementsByTagName('li')[0]
-    	var oldStyle = oli.style.cssText //老的css样式
-alert(oldStyle) //会弹出老的样式
-/*oli.style.cssText="width:200px;height:70px;color:red" + "oldStyle";*/
+    var oul = document.getElementById('oul')
+    oul.className = "divo"
+    /*function abs(x) {
+        if (x >= 0) {
+            return x;
+        } else {
+            return -x;
+        }
+    }
+    abs(-1)
+    alert(abs())*/
     </script>
 </body>
 </html>

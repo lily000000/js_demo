@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件、函数、变量、判断</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo,.divb,.divc{
+		width: 1200px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 130px;
+		line-height:25px;
+	}
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、函数传参 一个参数 </li>
+		<li><button onclick="setcolor1('yellow')">背景变黄</button> <button onclick="setcolor1('red')">背景变红</button> <button onclick="setcolor1('black')">背景变黑</button> <button onclick="recover()">恢复原样</button> </li>
+		
+	</ul>
+</div>
+<div class="divb">
+	<ul>
+		<li>2、函数传参 一个参数 </li>
+		<li><button onclick="setstyle('background','red')">背景变红</button> <button onclick="setstyle('width','600px')">背景变窄</button> <button onclick="setstyle('background','yellow')">背景变黄</button> <button onclick="recover()">恢复原样</button> </li>
+		
+	</ul>
+</div>
+<div class="divc">
+	<ul>
+		<li>3、函数传参 参数加变量 </li>
+		<li><input type="text" name="" value="你拍一 我拍一" style="color: #4f6f7d;line-height: 25px;" id="text1"> <button onclick="setadd('value')">改变文字</button> <button onclick="setadd('title')">改变输入框的title</button> <button onclick="recover()">恢复原样</button> </li>
+		
+	</ul>
+</div>
+</body>
+<script type="text/javascript">
+function setcolor1(color){
+	var divo = document.getElementsByClassName('divo')
+	divo[1].style.background = color 
+}
+function recover(){
+	var divo = document.getElementsByClassName('divo')
+	var divb = document.getElementsByClassName('divb')
+	divo[1].style.background = ''
+	divb[0].style = '';
+} //定义1个参数
+
+function setstyle(name,value){
+	var divb = document.getElementsByClassName('divb');
+	divb[0].style[name] = value;
+}//定义2个参数
+function setadd(name){
+	var t1 = document.getElementById('text1')
+	t1[name] = '哈哈'
+}//改变文字
+
+</script>
+</html>
