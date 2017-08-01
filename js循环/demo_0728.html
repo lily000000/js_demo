@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件、函数、变量、判断</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		/* border: none;
+		background: none; */
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 130px;
+		height: 40px;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	.active{
+		background: red;
+	}
+	span{
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		border:1px solid red;
+	}
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、for循环 <br><button id="btnl">循环出现提示框5次</button></li>
+	</ul>
+	
+	
+</div>
+<div class="divo">
+	<ul>
+		<li>2、批量操作样式 <br><button id="btn2">点击变颜色</button></li>
+		<li class="spano">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>	
+		</li>
+	</ul>	
+</div>
+
+<div class="divo">
+	<ul>
+		<li>3、if判断for循环</li>
+		<li class="spano">
+			<input type="checkbox" name=""></span>
+			<input type="checkbox" name=""></span> 
+			<input type="checkbox" name=""></span> 
+			<input type="checkbox" name=""></span> 
+			<input type="checkbox" name=""></span> 
+			<input type="checkbox" name=""></span> 
+			<input type="checkbox" name=""></span>
+			<input type="checkbox" name=""></span> 
+		</li>
+		<li><button class="ha">全选</button>&nbsp;<button class="ha">反选</button>&nbsp;	<button class="ha">不选</button></li>
+	</ul>	
+</div>
+</body>
+<script type="text/javascript">
+window.onload = function(){//当前页面加载完后才执行这个函数的内容
+var oli = document.getElementsByTagName('li')
+var btn1 = document.getElementById('btnl')
+var btn2 = document.getElementById('btn2')
+var spano = document.getElementsByTagName('span')
+var ha = document.getElementsByClassName('ha')
+var guan = false;
+var inputo = document.getElementsByTagName('input')
+btn1.onclick = function(){
+	for(i=0;i<5;i++){
+		alert('第'+ (i+1) +'次')//0、1、2、3、4
+	}
+	/*alert(i)*/ //5
+}
+btn2.onclick = function(){
+		for(i=0;i<spano.length;i++){
+			if (spano[i].style.background == '') {
+				spano[i].style.background = 'yellow'
+				/*var guan =true;*/
+			}else{
+				spano[i].style.background = ''
+			}			
+		   }	
+}
+
+ha[0].onclick = function(){
+	for(i=0;i<inputo.length;i++){
+		inputo[i].checked = 'checked'
+	}
+}//全选
+ha[1].onclick = function(){
+	for (i=0;i<inputo.length;i++) {
+		if (inputo[i].checked == false) {
+			inputo[i].checked = true
+		}else{
+			inputo[i].checked = false
+		}
+	}
+}//反选
+ha[2].onclick = function(){
+	for(var i=0;i<inputo.length;i++){
+		inputo[i].checked = false;
+	}
+}
+
+
+}//循环
+
+</script>
+</html>

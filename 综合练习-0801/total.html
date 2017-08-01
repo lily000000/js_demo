@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>总的</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		/* height: 350px; */
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.divt{
+		background: #eae9e9;
+		width: 400px;
+		padding: 10px;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 28px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	.oul{
+		width: 350px;
+		background: #eae9e9;
+		margin-top:10px;
+		margin:auto;
+	}
+	.oul li{
+		width: 100px;
+		display: inline-block;
+		margin-top: 10px;
+		text-align: center;
+		background: #424242;
+		margin-left: 5px;
+		display: inline-block;
+		cursor: pointer;
+		color: #ffffff;
+		font-size: 20px;
+		font-weight: 700;
+		border: 1px solid #424242;
+	}
+	.oul li.active{
+		background: #fff; 
+		border: 1px solid #424242;
+		color: #e84a7e;
+	}
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	}
+	.subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	}
+	.wrap{
+	 	width: 400px;
+	 	height: 35px;
+	 	line-height: 35px;
+	 	margin-top: 20px;
+	 	border: 1px solid red;
+	 	position: relative;
+	}
+	.wrap .opt{
+	 	position: absolute;
+	 	display: none;
+	 	text-indent: 24px;
+
+	}
+	#two{
+		width: 300px;
+		line-height: 30px;
+		text-indent: 24px;
+		border: 1px solid blue;
+		margin-top: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="divo titleone">
+		javascript 
+	</div>
+	<div class="divo">
+			<ul>
+				<li>1、innerHTML的基本使用</li>
+			</ul>
+			<div class="divt">
+			<ul class="oul">
+				<li class="oli active"><p>1</p><span>JAN</span></li>
+				<li class="oli"><p>2</p><span>TWO</span></li>
+				<li class="oli"><p>3</p><span>THREE</span></li>
+				
+			</ul>
+			<ul class="oul">
+				<li class="oli"><p>4</p><span>four</span></li>
+				<li class="oli"><p>5</p><span>five</span></li>
+				<li class="oli"><p>6</p><span>six</span></li>
+				
+			</ul>
+			<ul class="oul">
+				<li class="oli"><p>7</p><span>JUL</span></li>
+				<li class="oli"><p>8</p><span>AUG</span></li>
+				<li class="oli"><p>9</p><span>SEP</span></li>
+				
+			</ul>
+			<ul class="oul">
+				<li class="oli"><p>10</p><span>OCT</span></li>
+				<li class="oli"><p>11</p><span>OCT</span></li>
+				
+			</ul>
+			<dl class="wrap">
+				<dd class='opt' style="display: block;">1月活动<span>这是一月活动内容</span></dd>
+				<dd class='opt'>2月活动<span>这是二月活动内容</span></dd>
+				<dd class='opt'>3月活动<span>这是三月活动内容</span></dd>
+				<dd class='opt'>4月活动<span>这是四月活动内容</span></dd>
+				<dd class='opt'>5月活动<span>这是五月活动内容</span></dd>
+				<dd class='opt'>6月活动<span>这是六月活动内容</span></dd>
+				<dd class='opt'>7月活动<span>这是七月活动内容</span></dd>
+				<dd class='opt'>8月活动<span>这是八月活动内容</span></dd>
+				<dd class='opt'>9月活动<span>这是九月活动内容</span></dd>
+				<dd class='opt'>10月活动<span>这是十月活动内容</span></dd>
+				<dd class='opt'>11月活动<span>这是十一月活动内容</span></dd>
+			</dl>
+			<div id="two">
+				<h2>1月活动</h2>
+				<p>这是1月活动内容</p>
+			</div>	
+		</div>
+		<br>
+			
+	</div>
+</body>
+<script type="text/javascript">
+	var oli = document.getElementsByClassName('oli')
+	var op = document.getElementsByClassName('opt')
+	var two = document.getElementById('two')
+	var arr = ['1','2','3','4','5','6','7','8','9','10','11']
+	for(var i=0;i<oli.length;i++){
+			oli[i].index = i;
+			oli[i].onmouseover = function(){
+				for(var j=0;j<oli.length;j++){
+					oli[j].className = 'oli'
+					op[j].style.display='none'
+					/*alert(op[j].style.display)*/
+				}
+				var cont = arr[this.index]
+				alert(cont)
+				this.className = 'oli active'
+				op[this.index].style.display = 'block'
+				two.innerHTML = '<h2>'+cont+'月活动</h2><p>'+'这是'+cont+'月活动内容'+'</p>'
+			}
+		
+		
+	}
+</script>
+</html>

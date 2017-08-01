@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this索引值</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		/* border: none;
+		background: none; */
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		height: 180px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 130px;
+		height: 40px;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	.active{
+		background: red;
+	}
+	span{
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		border:1px solid red;
+	}
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	.oul li.active{
+		background: #5bc0de;
+		color: #ffffff;
+	}
+	.odiv_wrap{
+		position: relative;
+		background: #bce8f1;
+		width: 1200px;
+		height: 130px;
+		color: #31708f;
+		text-indent: 24px;line-height: 25px;
+	}
+	.odiv_wrap .odiv{
+		position: absolute;
+		display: none; 
+	}
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、选项卡 鼠标经过变换</li>
+	</ul>
+	<ul class="oul">
+		<li class="oli active">栏目一</li>
+		<li class="oli">栏目二</li>
+		<li class="oli">栏目三</li>
+		<li class="oli">栏目四</li>
+	</ul>
+	<div class="odiv_wrap">
+		<div class="odiv" style="display: block;">
+			<P>栏目一的内容</P>
+			<P>栏目一的内容</P>
+			<P>栏目一的内容</P>
+			<P>栏目一的内容</P>
+			<P>栏目一的内容</P>
+		</div>
+		<div class="odiv">
+			<P>栏目二的内容</P>
+			<P>栏目二的内容</P>
+			<P>栏目二的内容</P>
+			<P>栏目二的内容</P>
+			<P>栏目二的内容</P>
+		</div>
+		<div class="odiv">
+			<P>栏目三的内容</P>
+			<P>栏目三的内容</P>
+			<P>栏目三的内容</P>
+			<P>栏目三的内容</P>
+			<P>栏目三的内容</P>
+		</div>
+		<div class="odiv">
+			<P>栏目四的内容</P>
+			<P>栏目四的内容</P>
+			<P>栏目四的内容</P>
+			<P>栏目四的内容</P>
+			<P>栏目四的内容</P>
+		</div>
+	</div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+var oul = document.getElementsByClassName('oul')
+var oli = document.getElementsByClassName('oli')
+var odiv = document.getElementsByClassName('odiv')
+var odiv_wrap = document.getElementsByClassName('odiv_wrap')
+window.onload = function(){//当前页面加载完后才执行这个函数的内容
+
+for(var i=0;i<oli.length;i++){
+	oli[i].index = i;
+	//给每一个导航添加一下索引
+	oli[i].onmouseover = function(){
+		for(var j=0;j<oli.length;j++){
+			oli[j].className = 'oli'
+			odiv[j].style.display = 'none'
+		}//原先的
+		this.className = 'oli active'
+		odiv[this.index].style.display = 'block'//把导航对应的索引位置的 div 显示出来，这里也就是添加index的作用，通过这个索引来找到对应的div 这里的 this 就是指上面鼠标所在的导航
+	}
+}
+
+}
+
+</script>
+</html>

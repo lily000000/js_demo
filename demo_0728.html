@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件、函数、变量、判断</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		/* border: none;
+		background: none; */
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 300px;
+		height: 40px;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 100px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	.active{
+		background: red;
+	}
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、提取onclick进JS window.onload,获取当前页面中所有li的个数（length）</li>
+		<li><input type="button" name="" value="修改样式" style="" class='btn'></li>
+		<li><input type="button" name="" value="修改样式" style="" class='btn'></li>
+		<li><input type="button" name="" value="修改样式" style="" class='btn'></li>
+		<li><input type="button" name="" value="修改样式" style="" class='btn'></li>
+		<li><input type="button" name="" value="修改样式" style="" class='btn'></li>
+		<li><input type="button" name="" value="修改样式" style="" class='btn'></li>
+	</ul>
+	<br>
+	<button id="btnl">统计当前页面有多少个li</button>
+</div>
+</body>
+<script type="text/javascript">
+window.onload = function(){//当前页面加载完后才执行这个函数的内容
+var oli = document.getElementsByTagName('li')
+var btn = document.getElementById('btnl')
+btn.onclick = function(){
+	alert('统计当前有'+ oli.length + "个li")
+}
+}
+
+</script>
+</html>

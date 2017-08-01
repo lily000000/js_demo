@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML、字符串拼接、数组</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		height: 180px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	 input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	 }
+	 .subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	 }
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、innerHTML的基本使用</li>
+	</ul>
+	<ul>
+		<li><input type="text" name="" placeholder="在这里输入文字" value="" id="oinput"> &nbsp;<button id="btn1">提交</button></li>
+		<br>
+		<br>
+		<li><p>提交后在这里显示：<span id="osp"></span></p></li>
+	</ul>	
+	</div>
+	<div class="divo">
+		<ul>
+			<li>1、innerHTML的基本使用</li>
+		</ul>
+		<ul>
+			<li><input type="text" name="" placeholder="在这里输入文字" value="" id="tinput"> &nbsp;<span>+</span>&nbsp;<input type="text" name="" placeholder="在这里输入文字" value="" id="einput"> <button id="btn2">提交</button></li>
+			<br>
+			<br>
+			<li><p>提交后在这里显示：<span id="tsp"></span></p></li>
+		</ul>	
+	</div>
+
+	<div class="divo">
+		<ul>
+			<li>1、innerHTML的基本使用</li>
+		</ul>
+		<ul>
+			<li><button class="sub">提交1</button>&nbsp;<button class="sub">提交2</button>&nbsp;<button class="sub">提交3</button>&nbsp;<button class="sub">提交4</button> <button class="subo" >全部弹出来</button></li>
+			<br>
+			<br>
+			<li><p>提交后在这里显示：<span id="esp">请点击上面的4各按钮输入</span></p>
+			</li>
+		</ul>	
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+var oul = document.getElementsByClassName('oul')
+var oinput = document.getElementById('oinput')
+var tinput = document.getElementById('tinput')
+var einput = document.getElementById('einput')
+var btn1 = document.getElementById('btn1')
+var btn2 = document.getElementById('btn2')
+var oli = document.getElementsByClassName('oli')
+var osp = document.getElementById('osp')
+var tsp = document.getElementById('tsp')
+var esp = document.getElementById('esp')
+var sub = document.getElementsByClassName('sub')
+var subo = document.getElementsByClassName('subo')[0]
+var arr = ['这是第一句','这是第二句','这是第三句','这是第四句']
+window.onload = function(){//当前页面加载完后才执行这个函数的内容
+	btn1.onclick = function(){
+		var valo = oinput.value
+		osp.innerHTML = valo
+	}
+	btn2.onclick = function(){
+		var valt = tinput.value
+		var evalt = einput.value
+		var sum = valt + evalt
+		tsp.innerHTML = sum
+	}
+for(var i=0;i<sub.length;i++){
+	sub[i].index = i;//声明索引
+	sub[i].onclick = function(){
+		var contento = arr[this.index]
+		alert(contento)
+		esp.innerHTML = contento
+	}
+}
+subo.onclick = function(){
+	for(var i=0;i<arr.length;i++){
+		alert(arr[i])
+	}
+	}//只执行一步
+}
+</script>
+</html>
