@@ -1,22 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-    <style type="text/css">
-        .divo{
-            font-size: 40px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-	<ul id="oul" class="hah gg ss">
-       <li style="color:blue;text-align:center;background:#cccccc;">测试看看</li>
-    </ul>
-    <script type="text/javascript">
-    var arr = [1,2,3];
-    arr.length = 6
-    alert(arr)   
-    </script>
+<ul></ul>
+<script>
+    var oli = document.getElementsByTagName('li')
+    var oul = document.getElementsByTagName('ul')[0]
+    var color = ['rgb(159,131,145)', 'rgb(74,192,235)', 'rgb(110,128,191)']
+    var ab = ''//设置一个变量为空把每一次的颜色给它
+    for (i = 0; i < 30; i++) {
+        oul.innerHTML += '<li style="background: ' + color[i % color.length] + '">' + (i + 1) + '</li>'
+    }
+    for (m = 0; m < oli.length; m++) {
+        oli[m].onoff = false        //定义一个自定义属性为假
+        oli[m].onmouseover = function () {      //鼠标悬浮时的事件
+            ab = this.style.background      //把每一次的颜色给他，存储颜色
+           if(!this.onoff){                //当为真的时候鼠标悬浮有高光
+                this.style.background = 'rgb(237,129,172)'
+           }
+        }
+
+        oli[m].onmouseout = function () {    //鼠标离开时的事件
+            this.style.background = ab     //它的颜色变回原来的了
+
+        }
+        oli[m].onclick = function () {    //鼠标点击时的事件
+            for (n = 0; n < oli.length; n++) {
+                /*ab=this.style.background*/
+                oli[n].style.background = color[n % color.length]     //清空变回原来的颜色
+                oli[n].onoff = false     //为假
+            }
+            this.onoff = true        //鼠标点击之后为真，鼠标悬浮就不能有高光了
+            this.style.background = 'blue'      //这个颜色为蓝色
+            ab = 'blue'
+        }
+    }
+</script>
+
 </body>
 </html>

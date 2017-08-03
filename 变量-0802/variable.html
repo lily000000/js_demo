@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML、字符串拼接、数组</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		height: 180px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	/* button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	} */
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	 input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	 }
+	 .subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	 }
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、变量的类型</li>
+	</ul>
+	<ul>
+		<li><button>number</button> &nbsp;<button >string</button>&nbsp;<button>boolean</button>&nbsp;<button>function</button>&nbsp;<button >object</button>&nbsp;<button>undefined</button>&nbsp;<button>null</button></li>
+		<br>
+		<br>
+		<li><span id="osp">变量类型例子展示</span></li>
+	</ul>	
+</div>
+
+<div class="divo">
+	<ul>
+		<li>2、变量类型转换 </li>
+	</ul>
+	<ul>
+	    <li>
+	    <p>例1：输入框的默认value进行相加，结果是进行了字符串相加，而非数字相加。</p>
+	    <input type="text" name=""> + <input type="text" name=""> <button>总和</button></li>
+		<br>
+		<br>
+	</ul>	
+
+	<ul>
+	    <li>
+	    <p>例2：将value的值进行parseInt，之后再相加，就是数字相加的结果了。</p>
+	    <input type="text" name=""> + <input type="text" name=""> <button>总和</button></li>
+		<br>
+		<br>
+	</ul>
+
+	<ul>
+	    <li>
+	    <p>例3：isNaN，检测输入框的内容是不是NaN。true为真，false为假。</p>
+	    <input type="text" name=""> <button>总和</button></li>
+		<br>
+		<br>
+	</ul>	
+</div>
+</div>
+</body>
+<script type="text/javascript">
+var btn = document.getElementsByTagName('button');
+var osp = document.getElementById('osp');
+var iput = document.getElementsByTagName('input')
+btn[0].onclick = function(){
+	var a = 22;
+	osp.innerHTML='类型：数字' + typeof a + '<br>例如：'+'<code>var a=22;</code>'
+	alert(typeof(a))
+}
+btn[1].onclick = function(){
+	var a = 'John';
+	osp.innerHTML='类型：字符串' + typeof a + '<br>例如：'+'<code>var a=John;</code>'
+	alert(typeof(a))
+}
+btn[2].onclick = function(){
+	var a = true;
+	osp.innerHTML='类型：布尔' + typeof a + '<br>例如：'+'<code>var a=true;</code>'
+	alert(typeof(a))
+}
+btn[3].onclick = function(){
+/*	a()*/
+	var a = function(){
+		console.log(haha)
+	}
+	osp.innerHTML='类型：函数' + typeof a + '<br>例如：'+'<code>var a=function;</code>'
+	alert(typeof(a))
+}
+
+btn[4].onclick = function(){
+/*	a()*/
+	var a = {}
+	osp.innerHTML='类型：函数' + typeof a + '<br>例如：'+'<code>var a={function};</code>'
+	alert(typeof(a))
+}
+
+btn[5].onclick = function(){
+	var a;
+	osp.innerHTML='类型：函数' + typeof a + '<br>例如：'+'<code>var a;</code>'
+	alert(typeof(a))
+}
+
+btn[6].onclick = function(){
+	var a = null;
+	osp.innerHTML='类型：函数' + typeof a + '<br>例如：'+'<code>var a;</code>'
+	alert(typeof(a))
+}
+
+btn[7].onclick = function(){
+	/*var a = null;*/
+	var valo = iput[0].value
+	var valt =  iput[1].value
+	var val = valo + valt
+	if (val == '') {
+		alert('请输入数值')
+	}else{
+		alert(val)
+	}
+	 
+}
+document.onkeydown=function(event){
+	var valo = iput[0].value
+	var valt =  iput[1].value
+	var val = valo + valt
+    var e = event || window.event || arguments.callee.caller.arguments[0];            
+    if(e && e.keyCode==13){ // enter 键
+              alert(val)
+            }
+        };//鼠标按下事件
+btn[8].onclick = function(){
+	/*var a = null;*/
+	var valo = parseInt(iput[2].value)
+	var valt =  parseInt(iput[3].value)
+	var val = valo + valt
+	if (val == '') {
+		alert('请输入数值')
+	}else{
+		alert(val)
+	}
+	 parseFloat()
+}
+btn[9].onclick = function(){
+	alert(isNaN(iput[4].value));
+}
+</script>
+</html>

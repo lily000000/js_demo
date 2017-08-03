@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML、字符串拼接、数组</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		/* height: 180px; */
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	 input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	 }
+	 .subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	 }
+	 dd{
+	 	width: 1000px;
+	 	margin: auto;
+	 	border: 1px solid #ddd;
+	 	padding: 10px 15px;
+	 	margin-bottom:-1px;
+	 	border-top-right-radius: 4px;
+	 	border-top-left-radius: 4px;
+	 	text-align: center;
+	 }
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、取模应用于隔行换色</li>
+	</ul>
+	<dl>
+		<dd>1</dd>
+		<dd>2</dd>
+		<dd>3</dd>
+		<dd>4</dd>
+		<dd>5</dd>
+		<dd>6</dd>
+		<dd>7</dd>
+		<dd>8</dd>
+	</dl>
+	<button>隔行变色</button>
+</div>
+
+</div>
+</body>
+<script type="text/javascript">
+var btn = document.getElementsByTagName('button')
+var ddo = document.getElementsByTagName('dd')
+btn[0].onclick = function(){
+	for (var i = 0; i < ddo.length; i++) {
+		if(i%2==0){
+			ddo[i].style.background = '#008000'
+		}else{
+			ddo[i].style.background = ''
+		}
+
+    }
+}
+</script>
+</html>
