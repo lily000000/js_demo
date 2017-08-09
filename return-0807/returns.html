@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML、字符串拼接、数组</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	/* button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	} */
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	 input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	 }
+	 .subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	 }
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、函数返回值 return</li>
+	</ul>
+	<ul>
+		<li><input type="text" value=""> <button>return</button></li>
+		<br>
+		<br>
+	</ul>
+	<ul>
+		<li>2、return参数内容传出，已知将两个输入框的value作为参数返回值，return按钮相加后输出</li>
+	</ul>
+	<ul>
+	    <li><input type="text" value=""> 加 <input type="text" value="">  <button>return</button></li>
+		<br>
+	</ul> 
+	<ul>
+		<li>3、函数传参 arguments   例1：已知传给参数内容：alert(sum(12,13,14))，做个arguments.length的循环，并且每循环一次把参数里的数依次相加，整个参数数组加一遍为止。最后再把这个结果通过return返回出来。</li>
+	</ul>
+	<ul>
+	    <li><button>点击循环相加</button></li>
+		<br>
+	</ul>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+var btn = document.getElementsByTagName('button');
+var int = document.getElementsByTagName('input');
+btn[0].onclick = function(){
+	var val = int[0].value
+	if (val == '') {
+		alert('请输入内容');
+	}else{
+		function sun(){
+			return val;
+		}
+		alert(sun());
+	}
+}
+btn[1].onclick = function(){
+	var val1= int[1].value;
+	var val2 = int[2].value;
+	var valo = val1 + val2;
+	if (val1==''|| val2=='') {
+		alert('请输入内容')
+	}else{
+		function fun(a,b){
+			return a+b;
+		}
+		alert(fun(val1,val2));
+	}
+}
+btn[2].onclick = function(){
+	function sum(){
+		var sums = 0;
+		for (var i =0; i < arguments.length; i++) {
+			sums = sums + arguments[i]
+		}
+		return sums;
+	}
+	alert(sum(10,15,15))
+}
+</script>
+</html>

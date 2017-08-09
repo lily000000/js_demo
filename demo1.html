@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        li{
+            background: red;
+            background: #cccccc;
+        }
+    </style>
 </head>
 <body>
-<ul></ul>
+<ul>
+    <li style="color: red; color: blue;">1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
 <script>
-    var oli = document.getElementsByTagName('li')
+function count() {
+    var arr = [];
+    for (var i=1; i<=3; i++) {
+        arr.push(function () {
+            return i * i;
+        });
+    }
+    return arr;
+}
+
+var results = count();
+var f1 = results[0];
+var f2 = results[1];
+var f3 = results[2];
+   /* var oli = document.getElementsByTagName('li')
     var oul = document.getElementsByTagName('ul')[0]
     var color = ['rgb(159,131,145)', 'rgb(74,192,235)', 'rgb(110,128,191)']
     var ab = ''//设置一个变量为空把每一次的颜色给它
@@ -30,14 +54,18 @@
         oli[m].onclick = function () {    //鼠标点击时的事件
             for (n = 0; n < oli.length; n++) {
                 /*ab=this.style.background*/
-                oli[n].style.background = color[n % color.length]     //清空变回原来的颜色
+               /* oli[n].style.background = color[n % color.length]     //清空变回原来的颜色
                 oli[n].onoff = false     //为假
             }
             this.onoff = true        //鼠标点击之后为真，鼠标悬浮就不能有高光了
             this.style.background = 'blue'      //这个颜色为蓝色
             ab = 'blue'
         }
-    }
+    }*/
+   /* var arr = [{name: "尼玛", age: 22}, {name: "尼美", age: 20}];
+    for (var i=0; i<arr.length; i++) {
+        console.log(arr[i]);
+    }*/
 </script>
 
 </body>

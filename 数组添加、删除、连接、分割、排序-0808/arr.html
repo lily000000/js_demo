@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML、字符串拼接、数组</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	/* button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	} */
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	 input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	 }
+	 .subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	 }
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、设置数组的length</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>默认length</button> &nbsp;<button>取前3个</button></li>
+		<br>
+		<br>
+	</ul>
+
+	<ul>
+		<li>2、数组尾部添加 push</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>尾部添加</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>
+
+	<ul>
+		<li>3、数组尾部删除 pop</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>尾部删除一个</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>
+
+	<ul>
+		<li>4、数组头部添加 unshift</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>头部添加一个</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>
+
+	<ul>
+		<li>5、数组头部删除 shift</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>头部删除一个</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>
+	<ul>
+		<li>6、数组添加删除 任意操作 （删除 splice）</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>删除2-4</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>
+
+	<ul>
+		<li>6、数组添加删除 任意操作 （添加 splice）</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>在第二位添加abc</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>	
+	<ul>
+		<li>6、数组添加删除 任意操作 （替换 splice）</li>
+	</ul>
+	<ul>
+		<li><span>var arr=[1,2,3,4,5] </span><button>在第二位删除2位又添加2位</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>			
+</div>
+<div class="divo">
+	
+	<ul>
+		<li>7、数组连接、分割、排序</li>
+	</ul>
+	<ul>
+		<li>例1、数组连接 concat</li>
+		<li><span>var a=[1,2,3]; var b=[4,5,6] </span><button>连接两个数组</button> &nbsp;</li>
+		<br>
+		<br>
+		<li>例2、数组分隔 join</li>
+		<li><span>var a=[1,2,3,4,5,6] </span><button>用-连接</button> &nbsp;</li>
+		<br>
+		<br>
+		<li>例3、数组字符串排序 sort</li>
+		<li><span>var a=['float','height','window','zoom','load']</span><button>字符串排序</button> &nbsp;</li>
+		<br>
+		<br>
+	</ul>
+</div>
+</body>
+<script type="text/javascript">
+var btn = document.getElementsByTagName('button');
+btn[0].onclick = function(){
+	var arr=[1,2,3,4,5];
+	alert(arr)
+}//原数组
+btn[1].onclick = function(){
+	var arr=[1,2,3,4,5];
+	arr.length = 3;
+	alert(arr)
+}//取前三个
+btn[2].onclick = function(){
+	var arr = [1,2,3,4,5]
+	arr.push(6)
+	alert(arr)
+}//尾部添加一个
+btn[3].onclick = function(){
+	var arr = [1,2,3,4,5]
+	arr.pop()
+	alert(arr)
+}//尾部删除一个
+btn[4].onclick= function(){
+	var arr = [1,2,3,4,5]
+	arr.unshift('w')
+	alert(arr)
+}//头部添加一个
+btn[5].onclick = function(){
+	var arr = [1,2,3,4,5]
+	arr.shift()
+	alert(arr)
+}//头部删除一个
+btn[6].onclick = function(){
+	var arr = [1,2,3,4,5]
+	arr.splice(1,3)//从第一个元素后面，删除三个元素
+	alert(arr)
+}//删除2-4
+
+btn[7].onclick = function(){
+	var arr = [1,2,3,4,5]
+	arr.splice(1,0,'abc')//从第一个元素后面，添加abc元素
+	alert(arr)
+}//添加abc
+
+btn[8].onclick = function(){
+	var arr = [1,2,3,4,5]
+	arr.splice(2,2,'abc','dd')//从第二个元素后面，添加abc元素
+	alert(arr)
+}//在第二位删除2位又添加2位
+btn[9].onclick = function(){
+	var a = [1,2,3] 
+	var b = [4,5,6]
+	var arr = a.concat(b)// concat()方法用于连接两个或多个数组
+	alert(arr)
+}
+btn[10].onclick = function(){
+	var a = [1,2,3,4,5,6]
+	a.join('-')//使用分隔符来分隔数组中的元素
+	alert(a.join('-'))
+}
+</script>
+</html>
