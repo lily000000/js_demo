@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML、字符串拼接、数组</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		 border: none;
+		background: none;
+		vertical-align: middle;
+		outline: none;
+	}
+	a{
+		text-decoration: none;
+
+	}
+	html{
+		background: #ffffff;
+	}
+	body{
+		width: 1200px;
+		margin: auto;
+	}
+	.divo{
+		width: 1200px;
+		margin-top: 10px;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		padding: 24px;
+		box-shadow: 5px 3px 10px #cccccc;
+	}
+	.titleone{
+		
+		cursor: pointer;
+		outline: none;
+		color: #7698A7;
+		font-size: 30px;
+		text-indent: 24px;
+		font-weight: 700;
+		line-height: 150px;
+
+	}
+	ul li{
+		list-style: none;
+		font-size: 16px;
+		line-height: 30px;
+		color: #4F6F7D;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		transition: all 2s;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		background: #72a0cf;
+		color: #ffffff;
+	}
+	/* button:hover{
+		background: #72a0cf;
+		color: #ffffff;
+	} */
+	.three{
+		transition: all 2s;
+	}
+	.btn{
+		width: 50px;
+		height: 30px;
+		background: #fbdb65;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 2s;
+	}
+	.btn:hover{
+		background: red;
+		color: #ffffff;
+	}
+	
+	
+	.oul li{
+		width: 150px;
+		text-align: center;
+		background: #d0d0d0;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	
+	input{
+		border: 1px solid #4F6F7D;
+		width: 200px;
+		height: 30px;
+		color:#555;
+		text-indent: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	} 
+	 input:focus { 
+	   border-color: #9ecaed;
+	   box-shadow: 0 0 10px #9ecaed;
+	 }
+	 .subo{
+	 	width: 200px;
+	 	background: red;
+	 	color: #ffffff
+	 }
+	 .ha{
+	 	width: 300px;
+	 	text-align: center;
+	 	padding:10px;
+	 	background: rgb(0,0,0);
+	 }
+	 span{
+	 	font-size: 40px;
+	 	color: #ffffff;
+	 }
+	</style>
+</head>
+<body>
+<div class="divo titleone">
+	javascript 
+</div>
+<div class="divo">
+	<ul>
+		<li>1、定时器</li>
+	</ul>
+	<ul>
+	    <li>例1：setInterval 定时型</li>
+		<li>setInterval(show, 1000) <button>点击弹出</button> &nbsp;无终止执行 每隔一秒执行1次函数</li>
+		<br>
+		<br>
+		<li>例2：setTimeout 延时型</li>
+		<li>setTimeout(show, 2000) <button>点击弹出</button> &nbsp;两秒后执行一次弹出就结束</li>
+		<br>
+		<br>
+		<li>例3:开启和关闭(清除定时)</li>
+		<li>setInterval(show, 2000) <button>开启</button> &nbsp;<button>关闭</button>clearInterval(函数名)</li>
+		<br>
+		<br>
+	</ul>	
+</div>
+<div class="divo">
+<ul>
+	<li>2、日期对象 Date</li>
+	<li>获取 <button>当前小时</button> &nbsp;<button>当前分钟</button>&nbsp;<button>当前秒数</button> </li>
+	<br>
+	<br>
+	<li>做一个6位数字图片的循环，第i个图片的src就是第i个png</li>
+	<li class="ha">
+		<img src="image/0.png">
+		<img src="image/0.png">
+		<span>:</span>
+		<img src="image/0.png">
+		<img src="image/0.png">
+		<span>:</span>
+		<img src="image/0.png">
+		<img src="image/0.png">
+	</li>
+</ul>	
+</div>
+<div class="divo">
+	<ul>
+		<li>3、延时提示框</li>
+		<br>
+		<li><div style="width: 200px;line-height: 100px;text-align:center;background: #cccccc; cursor: pointer;" class="chu">鼠标经过触发</div> <br><div class="out" style="width: 200px;line-height: 100px;text-align:center;background: #cccccc;cursor: pointer;display: none;">我出来了</div></li>
+	</ul>
+</div>
+</body>
+<script type="text/javascript">
+var btn = document.getElementsByTagName('button')
+var imgo = document.getElementsByTagName('img')
+var chu = document.getElementsByClassName('chu')[0]
+var out = document.getElementsByClassName('out')[0]
+var time2 = null
+window.onload=function(){
+	btn[0].onclick = function(){
+		var n = 1
+		setInterval(function(){
+			alert('这是第'+(n++)+'次')
+		},1000)
+	} //setInterval
+	btn[1].onclick = function(){
+		setTimeout(function(){
+			alert('setTimeout')
+		},1000)
+	} //setTimeout
+	btn[2].onclick = function(){
+		time1 = setInterval(function(){
+			alert('赶紧关闭')
+		},1000)
+	}//开启
+	btn[3].onclick = function(){
+		clearInterval(time1)
+	}//关闭，清除定时器
+	btn[4].onclick = function(){
+		var a = new Date()
+		alert('当前小时为'+ a.getHours())
+	}//获取当前的小时
+	btn[5].onclick = function(){
+		var b = new Date()
+		alert('当前分钟为'+ b.getMinutes())
+	}//获取系统的分钟数
+	btn[6].onclick = function(){
+		var c = new Date()
+		alert('当前秒数为'+c.getSeconds())
+	}//当前的秒数
+
+	function toDou(n){
+		if (n<10) {
+			return '0'+n;
+		}else{
+			return ''+n;
+		}
+	} //返回n；
+	function fun(){
+		var d = new Date()
+		var on1 = d.getHours()
+		var on2 = d.getMinutes()
+		var on3 = d.getSeconds()
+		var datearr =toDou(on1)+toDou(on2)+toDou(on3)
+		for(var i=0;i<datearr.length;i++){
+			imgo[i].src = 'image/'+ datearr[i] +'.png';
+		}
+	}
+	    setInterval(fun,1000)
+	    var time2 = null
+	    chu.onmouseover = function(){
+	    	clearTimeout(time2)
+	    	out.style.display = 'block'
+	    }
+	    chu.onmouseout = function(){
+	    	time2 = setTimeout(function(){
+	    		out.style.display = 'none'
+	    	},500)
+	    }
+	    out.onmouseover = function(){
+	    	clearTimeout(time2)
+	    	this.style.display = 'block'
+	    }
+	    out.onmouseout = function(){
+	    	time2 = setTimeout(function(){
+	    		out.style.display = 'none'
+	    	},500)
+	    
+	    }
+}
+
+</script>
+</html>
